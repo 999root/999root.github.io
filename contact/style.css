@@ -54,7 +54,7 @@ nav{
 .intro{
     width: 100%; 
     background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,249,255,1) 0%, rgba(9,98,227,1) 52%, rgba(115,0,255,1) 100%);
+    background: linear-gradient(90deg, rgba(115,0,255,1) 0%, rgba(147,102,255,1) 50%, rgba(115,0,255,1) 100%);
     text-align: center;
     padding-top: 14px;
     padding-bottom: 14px;
@@ -98,6 +98,21 @@ nav{
     padding-bottom: 14px;
     padding-top: 14px;
 }
+
+.submit-button button{
+    padding: 20px 40px;
+    border-radius: 40px;
+    border: none;
+    color: #fff;
+    background: linear-gradient(90deg, rgba(115,0,255,1) 0%, rgba(147,102,255,1) 50%, rgba(115,0,255,1) 100%);
+}
+.submit-button button:hover{
+    cursor: pointer;
+    background: linear-gradient(90deg, rgba(147,102,255,1) 0%, rgba(115,0,255,1) 50%, rgba(147,102,255,1) 100%);
+}
+
+
+
 
 
 /* Footer Styles */
