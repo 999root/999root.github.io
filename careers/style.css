@@ -14,8 +14,7 @@ body {
     margin: 0;
     padding: 0;
 
-    background-color: rgba(147,102,255,.8);
-    background-image: url("https://ogusers.gg/images/groups/sparkle.gif");
+    background: linear-gradient(90deg, rgba(115,0,255,1) 0%, rgba(147,102,255,1) 50%, rgba(115,0,255,1) 100%);
 }
 
 nav{
@@ -117,14 +116,17 @@ footer {
 
 .introduction h1{
     font-size: 40px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
 }
 .introduction h3{
     font-size: 17px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
 }
 
 /*next section*/
 .next-section{
-    margin: 20vh 0vh;
+    margin-top: 20vh;
+    margin-bottom: 2vh;
 }
 
 
@@ -156,7 +158,6 @@ footer {
 #searchInput {
     padding: 10px;
     width: 300px;
-    border: none;
     border-radius: 5px;
     font-size: 16px;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
@@ -209,7 +210,15 @@ footer {
 
 
 /* apply */
-.application{
+
+.wave-container {
+    overflow: hidden; /* Ensures no overflow from the SVG */
+    margin-bottom: -10px;
+
+    color: black;
+}
+
+/*.application{
     background-color: #fff;
 
     padding-left: 10vh;
@@ -225,10 +234,29 @@ footer {
     text-align: center;
     border-radius: 20px;
     box-shadow: 0px 15px 30px rgba(0,0,0,0.7);
+}*/
+
+.application{
+    background-color: #fff;
+
+    align-items: center;
+    text-align: center;
+    padding: 10vh 20vh;
 }
 
 .intro{
-    padding-bottom: 4vh;
+    color: #fff;
+    padding: 6vh 6vh;
+    margin: 0vh 30vh;
+
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+
+    border-radius: 20px;
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.7);
+
+    background: linear-gradient(90deg, rgba(115,0,255,1) 0%, rgba(147,102,255,1) 50%, rgba(115,0,255,1) 100%);
+} .intro h3{
+    padding-bottom: 20px;
 }
 
 .application button{
