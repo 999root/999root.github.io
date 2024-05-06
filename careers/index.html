@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hot Beans - Careers</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" type="image/x-icon" href="../content/hotbeans.png">
+    </head>
+    <body>
+
+        <header>
+            <nav>
+                <a class="main-logo" href="../index.html"><img src="../content/hotbeans.png" width="60" height="60"></a>
+                <span class="list">
+                    <a class="links" href="../about/index.html">About Us</a> <!-- Make sure to add href attributes -->
+                    <a style="text-decoration: underline;" class="links" href="../careers/index.html">Careers</a>
+                    <a class="links" href="../contact/index.html">Contact</a>
+                    <a class="links" href="../for-employers/index.html">For Employers</a>
+                    <a class="links" href="../blog/index.html">Blog</a>
+                    <a class="links" href="../faq/index.html">FAQ</a>
+                </span>
+            </nav>
+        </header>
+
+        <section class="next-section">
+
+            <div class="introduction">
+                <h1>Careers</h1>
+                <h3>We can offer jobs for new and aspiring talent who would like to enter the continiously growing world of Web Development</h3>
+            </div>
+
+            <div class="new-recruits">
+
+                <div class="section-info-container">
+                    <h1>Job search ...</h1>
+                    <h3>We're looking for new and special talent everyday!</h3>
+                </div>
+
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search for jobs...">
+                    <button id="searchButton" onclick="searchJobs()">Search</button>
+                    <button id="searchButton" onclick="showAllJobs()">View All Openings</button>
+                    <button id="searchButton" onclick="clearSearch()">Clear</button>
+                </div>
+            
+                <div class="job" style="display: none;">
+                    <h2 class="job-title">Web Developer</h2>
+                    <p class="job-description">Create and maintain websites using coding languages and frameworks.</p>
+                </div>
+                
+                <div class="job" style="display: none;">
+                    <h2 class="job-title">Full Stack Developer</h2>
+                    <p class="job-description">Develop both front-end and back-end components of web applications.</p>
+                </div>
+                
+                <div class="job" style="display: none;">
+                    <h2 class="job-title">Blockchain Developer</h2>
+                    <p class="job-description">Build decentralized applications and implement blockchain technology.</p>
+                </div>
+                
+                <div class="job" style="display: none;">
+                    <h2 class="job-title">Backend Developer</h2>
+                    <p class="job-description">Focus on server-side development and database management.</p>
+                </div>
+                
+                <div class="job" style="display: none;">
+                    <h2 class="job-title">Frontend Developer</h2>
+                    <p class="job-description">Design and implement user interfaces for websites and web applications.</p>
+                </div>
+                
+                <div class="job" style="display: none;">
+                    <h2 class="job-title">Business Analyst</h2>
+                    <p class="job-description">Analyze business processes and requirements to improve efficiency and productivity.</p>
+                </div>
+                
+                <div class="job" style="display: none;">
+                    <h2 class="job-title">Director</h2>
+                    <p class="job-description">Provide leadership and strategic direction for the company's operations and growth.</p>
+                </div>
+                
+                <div class="job" style="display: none;">
+                    <h2 class="job-title">Finance Analyst</h2>
+                    <p class="job-description">Analyze financial data to provide insights and recommendations for decision-making.</p>
+                </div>                           
+                
+            </div>
+
+        </section>
+
+
+        <div class="application">
+
+            <div class="intro">
+                <h1>Apply now!</h1>
+                <h3>We need you !</h3>
+            </div>
+
+            <div class="button-outside">
+                <a href="../contact/index.html"><button>Contact us!</button></a>
+            </div>
+
+        </div>
+
+
+        <footer>
+            <div class="footer-container">
+                <div class="footer-info">
+                    <h3>Contact Us</h3>
+                    <p>Email: info@hotbeanswebdev.com</p>
+                    <p>Phone: 123-456-7890</p>
+                    <p>Address: 123 Web Development St, City, Country</p>
+                </div>
+                <div class="social-media">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Facebook_colored_svg_copy-1024.png" alt="Facebook"></a>
+                        <a href="#" class="social-icon"><img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Twitter_colored_svg-1024.png" alt="Twitter"></a>
+                        <a href="#" class="social-icon"><img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Instagram_colored_svg_1-1024.png" alt="Instagram"></a>
+                        <a href="#" class="social-icon"><img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Linkedin_unofficial_colored_svg-1024.png" alt="LinkedIn"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 Hot Beans Web Development. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <script src="script.js"></script>
+        
+    </body>
+</html>

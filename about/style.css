@@ -1,0 +1,198 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+/* Footer Styles */
+footer {
+    background-color: #374151;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+    box-shadow: 0px 15px 30px rgba(0,0,0,1);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.footer-info,
+.social-media {
+    flex: 1;
+}
+
+.footer-info h3,
+.social-media h3 {
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+}
+
+.social-icon {
+    margin: 0 10px;
+}
+
+.social-icon img {
+    width: 30px;
+    height: 30px;
+}
+
+.footer-info p{
+    color: #98a8c3;
+}
+
+/* Copyright */
+.copyright {
+    margin-top: 20px;
+    color: #98a9c3
+}
+
+
+
+
+/* Body Styles */
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* Header Styles */
+header {
+    /*background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(159, 45, 219, 1) 0%, rgba(148, 9, 227, 1) 50%, rgba(0, 212, 255, 1) 100%);*/
+    color: #fff;
+    padding: 20px 0;
+}
+
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1vh 2vh; /* Adjusted for a balanced padding */
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(159,45,219,1) 0%, rgba(148,9,227,1) 50%, rgba(0,212,255,1) 100%);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* This might need adjustment */
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+}
+
+.main-logo img {
+    vertical-align: middle;
+}
+
+.list {
+    display: flex;
+    gap: 30px;
+    margin-right: 6vh;
+}
+
+.links{
+    color: #fff;
+    text-decoration: none;
+} .links:hover{
+    color: gray;
+}
+
+
+
+/* ABOUT */
+.about-section{
+    padding-top: 30vh;
+}
+
+.about-logo{
+    text-align: center;
+}
+
+.team{
+    border-radius: 18px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.7);
+    background-color: rgba(147,102,255,.8);
+    color: #fff;
+    padding-bottom: 25px;
+    margin-top: 10vh;
+}
+
+.leaders-title-box{
+    padding-top: 50px;
+    text-align: center;
+    align-items: center;
+} .leaders-title-box h1 { font-size: 40px; }
+
+.leaders-content {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.leader {
+    text-align: center;
+
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.leader img {
+    width: 200px; /* Adjust as needed */
+    height: 200px; /* Set height to match width for square portraits */
+    object-fit: cover; /* Maintain aspect ratio and crop if necessary */
+    border-radius: 10px; /* Add border-radius for rounded corners */
+    margin-bottom: 20px;
+}
+
+
+.leader h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.leader p {
+    /*color: #555;*/
+    color: #fff;
+}
+
+
+
+
+/* About Section Styles */
+.about-section {
+    background-color: #FFFFFF;
+    padding: 70px 0px;
+}
+
+.about-content h2 {
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.wave-container {
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(147,102,255,0.8) 0%, rgba(115,0,255,1) 100%);
+    overflow: hidden; /* Ensures no overflow from the SVG */
+    margin-bottom: -100px;
+
+    color: black;
+}

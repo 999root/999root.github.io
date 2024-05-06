@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* Footer Styles */
+footer {
+    /*background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(218, 0, 255, 1) 0%, rgba(9, 200, 227, 1) 50%, rgba(115, 0, 255, 1) 100%);*/
+    background-color: #374151;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+    box-shadow: 0px 15px 30px rgba(0,0,0,1);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.footer-info,
+.social-media {
+    flex: 1;
+}
+
+.footer-info h3,
+.social-media h3 {
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+}
+
+.social-icon {
+    margin: 0 10px;
+}
+
+.social-icon img {
+    width: 30px;
+    height: 30px;
+}
+
+.footer-info p{
+    color: #98a8c3;
+}
+
+/* Copyright */
+.copyright {
+    margin-top: 20px;
+    color: #98a9c3
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(147,102,255,0.8) 0%, rgba(115,0,255,1) 100%);
+}
+
+header{
+    /*background-image: url("https://e-z.bio/_assets/sparkles/rainbowsparkle.gif");*/
+    /*background-image: url("https://ogusers.gg/images/blue-stars.gif");*/
+    background-image: url("https://ogusers.gg/images/groups/sparkle.gif");
+    
+    
+    color: #fff;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    padding-top: 20vh;
+    padding-bottom: 20vh;
+}
+
+header h1, header h3 {
+    color: #fff; /* Ensures text color is white */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7); /* Enhances text shadow for better visibility */
+    font-style: italic; /* Makes text italic */
+}
+
+header h1 {
+    font-weight: 900; /* Maximum boldness */
+    font-size: 2.5rem; /* Adjust size as needed */
+}
+
+header h3 {
+    font-weight: 700; /* Bold but less than h1 for visual hierarchy */
+    font-size: 1.5rem; /* Adjust size as needed */
+}
+
+.join-us-btn {
+    display: inline-block; /* Allows margin, padding, and width adjustments */
+    padding: 10px 30px; /* Adjusts size */
+    background-color: transparent; /* Transparent background */
+    color: #fff; /* White text */
+    border: 2px solid #fff; /* White border */
+    border-radius: 50px; /* Slightly rounded corners */
+    text-decoration: none; /* Removes underline from link */
+    font-size: 1rem; /* Adjusts font size */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text color */
+    margin-top: 10px;
+}
+
+.join-us-btn:hover {
+    background-color: #fff; /* White background on hover */
+    color: #000; /* Changes text color to black for contrast */
+    cursor: pointer; /* Changes cursor to pointer */
+}
+
+
+
+
+
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1vh 2vh; /* Adjusted for a balanced padding */
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(159,45,219,1) 0%, rgba(148,9,227,1) 50%, rgba(0,212,255,1) 100%);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* This might need adjustment */
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+}
+
+.main-logo img {
+    vertical-align: middle;
+}
+
+.list {
+    display: flex;
+    gap: 30px;
+    margin-right: 10vh;
+}
+
+.links{
+    color: #fff;
+    text-decoration: none;
+} .links:hover{
+    color: gray;
+}
+
+
+
+
+
+.next-section {
+    background-color: #FFFFFF;
+    padding: 70px 100px; /* Adjust padding as needed */
+}
+
+.next-section h1{
+    text-align: center;
+    font-size: 30px;
+}
+
+.content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Allows items to wrap to the next line if needed */
+}
+
+.text {
+    flex: 1; /* Text container takes up remaining space */
+    padding-right: 20px; /* Adjust spacing between text and image */
+    text-align: center; /* Center align the text */
+}
+
+.text h3{
+    font-size: 23px;
+    padding-bottom: 7px;
+}
+
+.image {
+    flex: 1; /* Image container takes up remaining space */
+    text-align: center; /* Center align the image */
+}
+
+.image img {
+    padding-top: 7vh;
+    max-width: 100%; /* Ensure the image doesn't exceed its container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+
+.wave-container {
+    /*background-image: url("https://e-z.bio/_assets/sparkles/rainbowsparkle.gif");*/
+    /*background-image: url("https://ogusers.gg/images/blue-stars.gif");*/
+    background-image: url("https://ogusers.gg/images/groups/sparkle.gif");
+    overflow: hidden; /* Ensures no overflow from the SVG */
+    margin-bottom: -100px;
+
+    color: black;
+}
+
+.quick-desc{
+    text-align: center;
+}
+
+.about-link-button{
+    text-align: center;
+    padding-top: 6vh;
+}
+
+.about-link-button button{
+    padding: 20px;
+    width: 200px;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(159,45,219,1) 0%, rgba(148,9,227,1) 50%, rgba(0,212,255,1) 100%);
+    border: none;
+    outline: transparent;
+    color: #fff;
+    border-radius: 30px;
+}
+
+.about-link-button a {
+    text-decoration: none;
+    text-decoration: solid;
+}
+
+.about-link-button a:hover{
+    color: #fff;
+}.about-link-button a button:hover{
+    color: rgba(159,45,219,1);
+    background: #fff;
+    cursor: pointer; 
+    outline: 3px solid rgba(159,45,219,1);
+}
