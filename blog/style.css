@@ -19,7 +19,7 @@ nav{
     left: 0;
     width: 100%;
     padding: 1vh 2vh; /* Adjusted for a balanced padding */
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(159,45,219,1) 0%, rgba(148,9,227,1) 50%, rgba(0,212,255,1) 100%);
+    background: linear-gradient(90deg, rgba(115,0,255,1) 0%, rgba(147,102,255,1) 50%, rgba(0,215,255,1) 100%);
     color: #fff;
     display: flex;
     align-items: center;
@@ -43,6 +43,9 @@ nav{
 } .links:hover{
     color: gray;
 }
+
+
+
 
 /* Footer Styles */
 footer {
@@ -97,6 +100,37 @@ footer {
 
 
 
+/*HERO*/
+.hero{
+    background: linear-gradient(90deg, rgba(74,0,252,1) 0%, rgba(115,0,255,1) 25%, rgba(147,102,255,1) 50%, rgba(115,0,255,1) 75%, rgba(74,0,252,1) 100%);
+    color: #fff;
+
+    text-align: center;
+    align-items: center;
+
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+
+    padding-top: 30vh;
+    padding-bottom: 20vh;
+}
+
+.wave-container {
+    overflow: hidden; /* Ensures no overflow from the SVG */
+    margin-bottom: -100px;
+
+    background: linear-gradient(90deg, rgba(74,0,252,1) 0%, rgba(115,0,255,1) 25%, rgba(147,102,255,1) 50%, rgba(115,0,255,1) 75%, rgba(74,0,252,1) 100%);
+
+    color: black;
+}
+
+.section3{
+    background: #f9f9f9;
+    padding: 70px 200px;
+    margin-top: 10vh;
+    margin-bottom: 6vh;
+}
+
+
 /*BLOG*/
 .blog-title{
     font-size: 35px;
@@ -142,14 +176,15 @@ footer {
     border-radius: 10px;
     overflow: hidden;
     background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
 
-    background-color: #72bcd4;
+    background: linear-gradient(90deg, rgba(147,102,255,1) 0%, rgba(115,0,255,1) 50%, rgba(74,0,252,1) 100%);
 }
 
 .blog-post:hover {
     transform: translateY(-5px);
+    background: linear-gradient(90deg, rgba(74,0,252,1) 0%, rgba(115,0,255,1) 50%, rgba(147,102,255,1) 100%);
 }
 
 .blog-post-content {
