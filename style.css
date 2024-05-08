@@ -7,7 +7,6 @@
 
 /* Footer Styles */
 footer {
-    /*background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(218, 0, 255, 1) 0%, rgba(9, 200, 227, 1) 50%, rgba(115, 0, 255, 1) 100%);*/
     background-color: #374151;
     color: #fff;
     padding: 40px 0;
@@ -63,11 +62,7 @@ body{
 }
 
 header{
-    /*background-image: url("https://e-z.bio/_assets/sparkles/rainbowsparkle.gif");*/
-    /*background-image: url("https://ogusers.gg/images/blue-stars.gif");*/
-    background-image: url("https://ogusers.gg/images/groups/sparkle.gif");
-    
-    
+    background-image: url("https://ogusers.gg/images/groups/sparkle.gif");  
     color: #fff;
 
     display: flex;
@@ -124,7 +119,7 @@ nav{
     left: 0;
     width: 100%;
     padding: 1vh 2vh; /* Adjusted for a balanced padding */
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(159,45,219,1) 0%, rgba(148,9,227,1) 50%, rgba(0,212,255,1) 100%);
+    background: linear-gradient(90deg, rgba(115,0,255,1) 0%, rgba(147,102,255,1) 50%, rgba(0,215,255,1) 100%);
     color: #fff;
     display: flex;
     align-items: center;
@@ -132,8 +127,22 @@ nav{
     box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
 }
 
+@keyframes nav-bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
 .main-logo img {
     vertical-align: middle;
+} .main-logo img:hover{
+    animation: nav-bounce 1s infinite;
 }
 
 .list {
@@ -194,8 +203,6 @@ nav{
 
 
 .wave-container {
-    /*background-image: url("https://e-z.bio/_assets/sparkles/rainbowsparkle.gif");*/
-    /*background-image: url("https://ogusers.gg/images/blue-stars.gif");*/
     background-image: url("https://ogusers.gg/images/groups/sparkle.gif");
     overflow: hidden; /* Ensures no overflow from the SVG */
     margin-bottom: -100px;
@@ -215,7 +222,7 @@ nav{
 .about-link-button button{
     padding: 20px;
     width: 200px;
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(159,45,219,1) 0%, rgba(148,9,227,1) 50%, rgba(0,212,255,1) 100%);
+    background-color: #7d50ff;
     border: none;
     outline: transparent;
     color: #fff;
@@ -230,8 +237,25 @@ nav{
 .about-link-button a:hover{
     color: #fff;
 }.about-link-button a button:hover{
-    color: rgba(159,45,219,1);
+    color: #7d50ff;
     background: #fff;
     cursor: pointer; 
-    outline: 3px solid rgba(159,45,219,1);
+    outline:#7d50ff;
+}
+
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.big-logo:hover{
+    animation: bounce 1s infinite;
 }
