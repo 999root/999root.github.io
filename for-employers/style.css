@@ -95,10 +95,23 @@ nav{
     box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
 }
 
-.main-logo img {
-    vertical-align: middle;
+@keyframes nav-bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 
+.main-logo img {
+    vertical-align: middle;
+} .main-logo img:hover{
+    animation: nav-bounce 1s infinite;
+}
 .list {
     display: flex;
     gap: 30px;
@@ -172,4 +185,23 @@ nav{
     font-size: 18px;
     font-weight: bold;
     color: #333;
+}
+
+
+
+
+.speak-section a button:hover{
+    background: transparent;
+    outline: 3px solid #7d50ff;
+    color: #7d50ff;
+    cursor: pointer;
+}
+
+.speak-section button{
+    outline: transparent; 
+    border: none; 
+    background: #7d50ff; 
+    color: #fff;
+    padding: 20px 40px; 
+    border-radius: 40px;
 }
