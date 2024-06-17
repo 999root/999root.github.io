@@ -7,12 +7,13 @@
         <title>Hot Beans - Contact</title>
         <link rel="stylesheet" href="style.css">
         <link rel="icon" type="image/x-icon" href="../content/hotbeans.png">
+        <meta name="description" content="Hot Beans Web Development. Contact us and let us know your thoughts!">
     </head>
 
     <body>
 
         <nav>
-            <a class="main-logo" href="../index.html"><img src="../content/hotbeans.png" width="60" height="60"></a>
+            <a class="main-logo" href="../index.html"><img src="../content/hotbeans-white.png" width="60" height="60"></a>
             <span class="list">
                 <a class="links" href="../about/index.html">About Us</a> <!-- Make sure to add href attributes -->
                 <a class="links" href="../careers/index.html">Careers</a>
@@ -51,7 +52,7 @@
                     <h3>Content</h3>
                     <textarea></textarea>
                     <br><br>
-                    <div class="submit-button"><a href="#"><button>Submit</button></a></div>
+                    <div class="submit-button"><a onclick="displaySubmittedMessage(); clearInputs();"><button type="submit">Submit</button></a></div>
                 </div>
             </div>
 
@@ -62,7 +63,7 @@
                 <div class="footer-info">
                     <h3>Contact Us</h3>
                     <p>Email: info@hotbeanswebdev.com</p>
-                    <p>Phone: 123-456-7890</p>
+                    <p>Phone: +44 1480 461800</p>
                     <p>Address: 123 Web Development St, City, Country</p>
                 </div>
                 <div class="social-media">
@@ -79,6 +80,28 @@
                 <p>&copy; 2024 Hot Beans Web Development. All rights reserved.</p>
             </div>
         </footer>
+
+        <script>
+            function clearInputs() {
+                var inputs = document.getElementsByClassName("inputs");
+                for (var i = 0; i < inputs.length; i++) {
+                    inputs[i].value = "";
+                }
+                var textarea = document.querySelector("textarea");
+                textarea.value = ""; // Clear the text area
+            }
+        
+            function displaySubmittedMessage() {
+                var message = document.createElement("p");
+                message.textContent = "Submitted!";
+                message.style.color = "green";
+                var submitButton = document.querySelector(".submit-button");
+                submitButton.appendChild(message);
+                setTimeout(function() {
+                    message.remove();
+                }, 2000);
+            }
+        </script>
 
     </body>
 
