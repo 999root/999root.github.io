@@ -6,14 +6,55 @@
     <title>Hot Beans - About us</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="../content/hotbeans.png">
+    <meta name="description" content="Learn more about us, meet our employees, learn how they are treated, and meet the lightskin owners.">
+    <style>
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            border-radius: 10px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
 
     <header>
         <nav>
-            <a class="main-logo" href="../index.html"><img src="../content/hotbeans.png" width="60" height="60"></a>
+            <a class="main-logo" href="../index.html"><img src="../content/hotbeans-white.png" width="60" height="60"></a>
             <span class="list">
-                <a style="text-decoration: underline;" class="links" href="../about/index.html">About Us</a> <!-- Make sure to add href attributes -->
+                <a style="text-decoration: underline;" class="links" href="../about/index.html">About Us</a>
                 <a class="links" href="../careers/index.html">Careers</a>
                 <a class="links" href="../contact/index.html">Contact</a>
                 <a class="links" href="../for-employers/index.html">For Employers</a>
@@ -74,21 +115,20 @@
                 </div>
 
                 <div class="leaders-content">
-
                     <div class="leader">
-                        <a href="../content/joao.jpeg"><img src="../content/joao.jpeg" alt="Leader 2"></a>
+                        <img src="../content/joao.jpeg" alt="Leader 2" class="leader-img" data-modal="modal-joao">
                         <h3 style="text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Joao Correia</h3>
                         <p style="text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Chief Financial Officer</p>
                     </div>
 
                     <div class="leader">
-                        <a href="../content/benn.png"><img src="../content/benn.png" alt="Leader 1"></a>
+                        <img src="../content/benn.png" alt="Leader 1" class="leader-img" data-modal="modal-benn">
                         <h3 style="text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Benn Pope</h3>
                         <p style="text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Chief Executive Officer</p>
                     </div>
 
                     <div class="leader">
-                        <a href="../content/renan.png"><img src="../content/renan.png" alt="Leader 3"></a>
+                        <img src="../content/renan.png" alt="Leader 3" class="leader-img" data-modal="modal-renan">
                         <h3 style="text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Renan Rasim</h3>
                         <p style="text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Chief Development Officer</p>
                     </div>
@@ -103,7 +143,7 @@
             <div class="footer-info">
                 <h3>Contact Us</h3>
                 <p>Email: info@hotbeanswebdev.com</p>
-                <p>Phone: 123-456-7890</p>
+                <p>Phone: +44 1480 461800</p>
                 <p>Address: 123 Web Development St, City, Country</p>
             </div>
             <div class="social-media">
@@ -120,6 +160,60 @@
             <p>&copy; 2024 Hot Beans Web Development. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Modals -->
+    <div id="modal-joao" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modal-joao">&times;</span>
+            <h2>Joao Correia</h2>
+            <p>Joao Correia has a long history in finance, starting as a financial analyst all the way up to a very big Forex/Crypto 
+                Trader. Owning 300k worth of NFTs and he holds the most shares in Apple.</p>
+        </div>
+    </div>
+
+    <div id="modal-benn" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modal-benn">&times;</span>
+            <h2>Benn Pope</h2>
+            <p>Benn Pope began his career in the IT Consultancy Industry since he was 10 years old. </p>
+        </div>
+    </div>
+
+    <div id="modal-renan" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modal-renan">&times;</span>
+            <h2>Renan Rasim</h2>
+            <p>Renan Rasim started in development at a young age, working on various...</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const leaderImages = document.querySelectorAll('.leader-img');
+            const modals = document.querySelectorAll('.modal');
+            const closeButtons = document.querySelectorAll('.close');
+
+            leaderImages.forEach(img => {
+                img.addEventListener('click', () => {
+                    const modalId = img.getAttribute('data-modal');
+                    document.getElementById(modalId).style.display = 'block';
+                });
+            });
+
+            closeButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const modalId = button.getAttribute('data-modal');
+                    document.getElementById(modalId).style.display = 'none';
+                });
+            });
+
+            window.addEventListener('click', (event) => {
+                if (event.target.classList.contains('modal')) {
+                    event.target.style.display = 'none';
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
