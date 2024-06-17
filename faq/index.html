@@ -28,33 +28,32 @@
 
             <h1 class="title"><i>Frequently Asked Questions</i></h1>
 
-            <div class="box">
+            <div class="box" data-modal="modal-what">
                 <h3>What is this company?</h3>
                 <p>This company, Hot Beans Web Development, specializes in creating innovative and user-friendly websites and web applications. We focus on delivering high-quality solutions tailored to our clients' needs.</p>
             </div>
 
-            <div class="box">
+            <div class="box" data-modal="modal-how">
                 <h3>How can I join your team?</h3>
                 <p>We're always looking for talented individuals to join our team! Check out our Careers page for current job openings and information on how to apply.</p>
             </div>
 
-            <div class="box">
+            <div class="box" data-modal="modal-touch">
                 <h3>How can I get in touch?</h3>
                 <p>You can reach out to us through our Contact page. We're available via email, phone, and social media. Feel free to send us your inquiries, feedback, or project proposals.</p>
             </div>
 
-            <div class="box">
+            <div class="box" data-modal="modal-services">
                 <h3>Do you offer services for businesses?</h3>
                 <p>Absolutely! We provide a range of services for businesses, including website development, e-commerce solutions, custom web applications, and digital marketing strategies. Get in touch with us to discuss your business needs.</p>
             </div>
 
-            <div class="box">
+            <div class="box" data-moda="modal-blog">
                 <h3>Do you have a company blog?</h3>
                 <p>Yes, we do! Our blog is a platform where we share industry insights, tips, and updates about our projects. You can find interesting articles on web development trends, design techniques, and much more.</p>
             </div>
 
         </section>
-
 
         <footer>
             <div class="footer-container">
@@ -78,6 +77,75 @@
                 <p>&copy; 2024 Hot Beans Web Development. All rights reserved.</p>
             </div>
         </footer>
+
+        <!-- Modal Structure -->
+        <div id="modal-what" class="modal">
+            <div class="modal-content">
+                <span class="close" data-modal="modal-what">&times;</span>
+                <h3>What is this company?</h3>
+                <p>This company, Hot Beans Web Development, specializes in creating innovative and user-friendly websites and web applications. We focus on delivering high-quality solutions tailored to our clients' needs.</p>
+            </div>
+        </div>
+
+        <div id="modal-how" class="modal">
+            <div class="modal-content">
+                <span class="close" data-modal="modal-how">&times;</span>
+                <h3>How can I join your team?</h3>
+                <p>We're always looking for talented individuals to join our team! Check out our Careers page for current job openings and information on how to apply.</p>
+            </div>
+        </div>
+
+        <div id="modal-touch" class="modal">
+            <div class="modal-content">
+                <span class="close" data-modal="modal-touch">&times;</span>
+                <h3>How can I get in touch?</h3>
+                <p>You can reach out to us through our Contact page. We're available via email, phone, and social media. Feel free to send us your inquiries, feedback, or project proposals.</p>
+            </div>
+        </div>
+
+        <div id="modal-services" class="modal">
+            <div class="modal-content">
+                <span class="close" data-modal="modal-services">&times;</span>
+                <h3>Do you offer services for businesses?</h3>
+                <p>Absolutely! We provide a range of services for businesses, including website development, e-commerce solutions, custom web applications, and digital marketing strategies. Get in touch with us to discuss your business needs.</p>
+            </div>
+        </div>
+
+        <div id="modal-services" class="modal">
+            <div class="modal-content">
+                <span class="close" data-modal="modal-services">&times;</span>
+                <h3>Do you have a company blog?</h3>
+                <p>Yes, we do! Our blog is a platform where we share industry insights, tips, and updates about our projects. You can find interesting articles on web development trends, design techniques, and much more.</p>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const jobContainers = document.querySelectorAll('.box');
+                const modals = document.querySelectorAll('.modal');
+                const closeButtons = document.querySelectorAll('.close');
+    
+                jobContainers.forEach(job => {
+                    job.addEventListener('click', () => {
+                        const modalId = job.getAttribute('data-modal');
+                        document.getElementById(modalId).style.display = 'block';
+                    });
+                });
+    
+                closeButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        const modalId = button.getAttribute('data-modal');
+                        document.getElementById(modalId).style.display = 'none';
+                    });
+                });
+    
+                window.addEventListener('click', (event) => {
+                    if (event.target.classList.contains('modal')) {
+                        event.target.style.display = 'none';
+                    }
+                });
+            });
+        </script>
 
     </body>
 
