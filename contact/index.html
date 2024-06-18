@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
 
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +15,7 @@
         <nav>
             <a class="main-logo" href="../index.html"><img src="../content/hotbeans-white.png" width="60" height="60"></a>
             <span class="list">
-                <a class="links" href="../about/index.html">About Us</a> <!-- Make sure to add href attributes -->
+                <a class="links" href="../about/index.html">About Us</a>
                 <a class="links" href="../careers/index.html">Careers</a>
                 <a style="text-decoration: underline;" class="links" href="../contact/index.html">Contact</a>
                 <a class="links" href="../for-employers/index.html">For Employers</a>
@@ -25,37 +25,31 @@
         </nav>
 
         <div class="contact-outside">
-
             <div class="contact-box">
-
                 <div class="intro">
                     <h1>Send us a message!</h1>
                 </div>
-
-                <div class="int-content">
+                <form id="contactForm" class="int-content">
                     <h3>First Name</h3>
-                    <input class="inputs">
-                    <br>
-                    <br>
-                    <h3>Last Name</h3>
-                    <input class="inputs">
-                    <br>
-                    <br>
-                    <h3>Email</h3>
-                    <input class="inputs">
-                    <br>
-                    <br>
-                    <h3>Phone Number</h3>
-                    <input class="inputs">
-                    <br>
-                    <br>
-                    <h3>Content</h3>
-                    <textarea></textarea>
+                    <input id="firstName" class="inputs" style="background-color: #fff; color: black;" type="text" required pattern="[A-Za-z\s]+" title="Please enter a valid first name.">
                     <br><br>
-                    <div class="submit-button"><a onclick="displaySubmittedMessage(); clearInputs();"><button type="submit">Submit</button></a></div>
-                </div>
+                    <h3>Last Name</h3>
+                    <input id="lastName" class="inputs" style="background-color: #fff; color: black;" type="text" required pattern="[A-Za-z\s]+" title="Please enter a valid last name.">
+                    <br><br>
+                    <h3>Email</h3>
+                    <input id="email" class="inputs" style="background-color: #fff; color: black;" type="email" required title="Please enter a valid email address.">
+                    <br><br>
+                    <h3>Phone Number</h3>
+                    <input id="phoneNumber" class="inputs" style="background-color: #fff; color: black;" type="tel" required pattern="\d{10,15}" title="Please enter a valid phone number.">
+                    <br><br>
+                    <h3>Content</h3>
+                    <textarea id="content" placeholder="Write your message here..." style="background-color: #fff; color: black;" required></textarea>
+                    <br><br>
+                    <div class="submit-button">
+                        <button type="submit">Submit</button>
+                    </div>
+                </form>
             </div>
-
         </div>
 
         <footer>
@@ -88,9 +82,9 @@
                     inputs[i].value = "";
                 }
                 var textarea = document.querySelector("textarea");
-                textarea.value = ""; // Clear the text area
+                textarea.value = "";
             }
-        
+
             function displaySubmittedMessage() {
                 var message = document.createElement("p");
                 message.textContent = "Submitted!";
@@ -101,6 +95,41 @@
                     message.remove();
                 }, 2000);
             }
+
+            document.getElementById('contactForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                let firstName = document.getElementById('firstName').value.trim();
+                let lastName = document.getElementById('lastName').value.trim();
+                let email = document.getElementById('email').value.trim();
+                let phone = document.getElementById('phoneNumber').value.trim();
+                let content = document.getElementById('content').value.trim();
+
+                if (firstName === '' || lastName === '' || email === '' || phone === '' || content === '') {
+                    alert('Please fill out all fields.');
+                    return;
+                }
+
+                // Basic gibberish check
+                let namePattern = /^[A-Za-z\s]+$/;
+                let phonePattern = /^\d{10,15}$/;
+
+                if (!namePattern.test(firstName) || !namePattern.test(lastName)) {
+                    alert('Please enter a valid name.');
+                    return;
+                }
+
+                if (!phonePattern.test(phone)) {
+                    alert('Please enter a valid phone number.');
+                    return;
+                }
+
+                // Simulate sending data (replace with actual form submission logic)
+                setTimeout(function() {
+                    clearInputs();
+                    displaySubmittedMessage();
+                }, 1000);
+            });
         </script>
 
     </body>
