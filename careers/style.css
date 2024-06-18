@@ -223,61 +223,34 @@ footer {
 
 
 
-/* apply */
 
-.wave-container {
-    overflow: hidden; /* Ensures no overflow from the SVG */
-    margin-bottom: -10px;
-
-    color: black;
+/* APPLICATION FORM LINK */
+.about-link-button{
+    text-align: center;
+    padding-top: 3vh;
+    padding-bottom: 6vh;
 }
 
-/*.application{
-    background-color: #fff;
-
-    padding-left: 10vh;
-    padding-right: 10vh;
-    padding-top: 10vh;
-    padding-bottom: 10vh;
-
-    margin-bottom: 10vh;
-    margin-left: 30vh;
-    margin-right: 30vh;
-
-    align-items: center;
-    text-align: center;
-    border-radius: 20px;
-    box-shadow: 0px 15px 30px rgba(0,0,0,0.7);
-}*/
-
-.application{
-    background-color: #fff;
-
-    align-items: center;
-    text-align: center;
-    padding: 10vh 20vh;
-}
-
-.intro{
+.about-link-button button{
+    padding: 30px;
+    width: 300px;
+    background-color: #7d50ff;
+    border: none;
+    outline: transparent;
     color: #fff;
-    padding: 6vh 6vh;
-    margin: 0vh 30vh;
-
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
-
-    border-radius: 20px;
-    box-shadow: 0px 10px 20px rgba(0,0,0,0.7);
-
-    background: linear-gradient(90deg, rgba(115,0,255,1) 0%, rgba(147,102,255,1) 50%, rgba(115,0,255,1) 100%);
-} .intro h3{
-    padding-bottom: 20px;
+    border-radius: 40px;
 }
 
-.application button{
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-bottom: 20px;
-    padding-top: 20px;
+.about-link-button a {
+    text-decoration: none;
+    text-decoration: solid;
+}
 
-    border-radius: 50px;
+.about-link-button a:hover{
+    color: #fff;
+}.about-link-button a button:hover{
+    color: #7d50ff;
+    background: #fff;
+    cursor: pointer; 
+    outline: 3px solid #7d50ff;
 }
