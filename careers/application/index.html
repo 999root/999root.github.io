@@ -1,391 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hot Beans - Careers</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="../content/hotbeans.png">
-    <meta name="description" content="Join us and help us create and better and more aesthetically pleasing Internet.">
-    <style>
-        /* Modal styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0,0,0,0.5);
-        }
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hot Beans - Careers</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" type="image/x-icon" href="../../content/hotbeans.png">
+        <meta name="description" content="Join us and help us create and better and more aesthetically pleasing Internet.">
+        <script>
+            function updateTitleAndHeader() {
+                const jobSelect = document.getElementById("jobSelect");
+                const selectedJob = jobSelect.options[jobSelect.selectedIndex].text;
+                document.title = "Hot Beans - " + selectedJob;
+                document.getElementById("applicationHeader").innerText = selectedJob + " Application";
+            }
 
-        .modal-content {
-            background-color: #fefefe;
-            margin: 15% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            max-width: 600px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            border-radius: 10px;
-        }
+            function handleSubmit(event) {
+                event.preventDefault();
+                const form = document.getElementById("applicationForm");
+                form.reset();
+                const confirmationMessage = document.getElementById("confirmationMessage");
+                confirmationMessage.style.display = "block";
+            }
+        </script>
+    </head>
+    <body>
 
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
+        <header>
+            <nav>
+                <a class="main-logo" href="../../index.html"><img src="../../content/hotbeans-white.png" width="60" height="60"></a>
+                <span class="list">
+                    <a class="links" href="../../about/index.html">About Us</a>
+                    <a style="text-decoration: underline;" class="links" href="../../careers/index.html">Careers</a>
+                    <a class="links" href="../../contact/index.html">Contact</a>
+                    <a class="links" href="../../for-employers/index.html">For Employers</a>
+                    <a class="links" href="../../blog/index.html">Blog</a>
+                    <a class="links" href="../../faq/index.html">FAQ</a>
+                </span>
+            </nav>
+        </header>
 
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <nav>
-            <a class="main-logo" href="../index.html"><img src="../content/hotbeans-white.png" width="60" height="60"></a>
-            <span class="list">
-                <a class="links" href="../about/index.html">About Us</a> <!-- Make sure to add href attributes -->
-                <a style="text-decoration: underline;" class="links" href="../careers/index.html">Careers</a>
-                <a class="links" href="../contact/index.html">Contact</a>
-                <a class="links" href="../for-employers/index.html">For Employers</a>
-                <a class="links" href="../blog/index.html">Blog</a>
-                <a class="links" href="../faq/index.html">FAQ</a>
-            </span>
-        </nav>
-    </header>
-
-    <section class="next-section">
-
-        <div class="introduction">
-            <h1><i>Careers</i></h1>
-            <h3><i>We can offer jobs for new and aspiring talent who would like to enter the continuously growing world of Web Development</i></h3>
+        <div style="padding: 12vh; margin: 12vh; color: #fff;">
+            <h1 style="text-align: center; font-size: 50px; font-style: italic;" id="applicationHeader">Applications</h1>
         </div>
 
-        <div class="new-recruits">
-
-            <div class="section-info-container">
-                <h1>Job search ...</h1>
-                <h3>We're looking for new and special talent every day!</h3>
-            </div>
-
-            <div class="search-container">
-                <input type="text" id="searchInput" placeholder="Search for jobs...">
-                <button id="searchButton" onclick="searchJobs()">Search</button>
-                <button id="searchButton" onclick="showAllJobs()">View All Openings</button>
-                <button id="searchButton" onclick="clearSearch()">Clear</button>
-                <button id="searchButton" href="#apply-link">Go and Apply</button>
-            </div>
-        
-            <div class="job" data-modal="modal-web-dev">
-                <h2 class="job-title">Web Developer</h2>
-                <p class="job-description">Create and maintain websites using coding languages and frameworks.</p>
-            </div>
-            
-            <div class="job" data-modal="modal-full-stack">
-                <h2 class="job-title">Full Stack Developer</h2>
-                <p class="job-description">Develop both front-end and back-end components of web applications.</p>
-            </div>
-            
-            <div class="job" data-modal="modal-blockchain">
-                <h2 class="job-title">Blockchain Developer</h2>
-                <p class="job-description">Build decentralized applications and implement blockchain technology.</p>
-            </div>
-            
-            <div class="job" data-modal="modal-backend">
-                <h2 class="job-title">Backend Developer</h2>
-                <p class="job-description">Focus on server-side development and database management.</p>
-            </div>
-            
-            <div class="job" data-modal="modal-frontend">
-                <h2 class="job-title">Frontend Developer</h2>
-                <p class="job-description">Design and implement user interfaces for websites and web applications.</p>
-            </div>
-            
-            <div class="job" data-modal="modal-business-analyst">
-                <h2 class="job-title">Business Analyst</h2>
-                <p class="job-description">Analyze business processes and requirements to improve efficiency and productivity.</p>
-            </div>
-            
-            <div class="job" data-modal="modal-director">
-                <h2 class="job-title">Director</h2>
-                <p class="job-description">Provide leadership and strategic direction for the company's operations and growth.</p>
-            </div>
-            
-            <div class="job" data-modal="modal-finance-analyst">
-                <h2 class="job-title">Finance Analyst</h2>
-                <p class="job-description">Analyze financial data to provide insights and recommendations for decision-making.</p>
-            </div>                           
-            
+        <div class="wave-container">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#FFFFFF" d="M0,160L48,138.7C96,117,192,75,288,85.3C384,96,480,160,576,176C672,192,768,160,864,160C960,160,1056,192,1152,202.7C1248,213,1344,203,1392,197.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"/>
+            </svg>
         </div>
 
-    </section>
+        <section style="background-color: #fff; padding: 20px;  padding-bottom: 10vh;">
 
-    <div class="wave-container">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <path fill="#FFFFFF" d="M0,160L48,138.7C96,117,192,75,288,85.3C384,96,480,160,576,176C672,192,768,160,864,160C960,160,1056,192,1152,202.7C1248,213,1344,203,1392,197.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"/>
-        </svg>
-    </div>
+            <form id="applicationForm" style="max-width: 600px; margin: 0 auto;" onsubmit="handleSubmit(event)">
+                <label for="jobSelect">Select Job Position:</label>
+                <select id="jobSelect" style="background-color: #fff; color: black;" name="jobSelect" onchange="updateTitleAndHeader()">
+                    <option value="" selected disabled>Select a job</option>
+                    <option value="web">Web Developer</option>
+                    <option value="frontend">Frontend Developer</option>
+                    <option value="backend">Backend Developer</option>
+                    <option value="fullstack">Full Stack Developer</option>
+                    <option value="blockchain">Blockchain Developer</option>
+                    <option value="analyst">Business Analyst</option>
+                    <option value="director">Director</option>
+                    <option value="finance">Finance Analyst</option>
+                </select>
 
-    <div id="apply-link" style="background-color: #fff; margin-top: -80px; padding-bottom: vh;">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" style="background-color: #fff; color: black;" required>
 
-        <div class="about-link-button">
-            <a href="application/index.html"><button><b>Apply</b></button></a>
-        </div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" style="background-color: #fff; color: black;" required>
 
-    </div>
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" style="background-color: #fff; color: black;" required>
 
-    <footer>
-        <div class="footer-container">
-            <div class="footer-info">
-                <h3>Contact Us</h3>
-                <p>Email: info@hotbeanswebdev.com</p>
-                <p>Phone: +44 1480 461800</p>
-                <p>Address: 123 Web Development St, City, Country</p>
-            </div>
-            <div class="social-media">
-                <h3>Follow Us</h3>
-                <div class="social-icons">
-                    <a href="#" class="social-icon"><img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Facebook_colored_svg_copy-1024.png" alt="Facebook"></a>
-                    <a href="#" class="social-icon"><img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Twitter_colored_svg-1024.png" alt="Twitter"></a>
-                    <a href="#" class="social-icon"><img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Instagram_colored_svg_1-1024.png" alt="Instagram"></a>
-                    <a href="#" class="social-icon"><img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Linkedin_unofficial_colored_svg-1024.png" alt="LinkedIn"></a>
+                <label for="resume">Upload Resume:</label>
+                <input type="file" id="resume" name="resume" style="background-color: #fff; color: black;" required>
+
+                <label for="coverLetter">Cover Letter:</label>
+                <textarea id="coverLetter" name="coverLetter" rows="4" style="background-color: #fff; color: black;" required></textarea>
+
+                <button type="submit">Submit Application</button>
+            </form>
+            <p id="confirmationMessage" style="display: none; text-align: center; color: green; margin-top: 20px;">Submitted, you will hear from us soon!</p>
+        </section>
+
+        <footer>
+            <div class="footer-container">
+                <div class="footer-info">
+                    <h3>Contact Us</h3>
+                    <p>Email: info@hotbeanswebdev.com</p>
+                    <p>Phone: +44 1480 461800</p>
+                    <p>Address: 123 Web Development St, City, Country</p>
+                </div>
+                <div class="social-media">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Facebook_colored_svg_copy-1024.png" alt="Facebook"></a>
+                        <a href="#" class="social-icon"><img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Twitter_colored_svg-1024.png" alt="Twitter"></a>
+                        <a href="#" class="social-icon"><img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Instagram_colored_svg_1-1024.png" alt="Instagram"></a>
+                        <a href="#" class="social-icon"><img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Linkedin_unofficial_colored_svg-1024.png" alt="LinkedIn"></a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="copyright">
-            <p>&copy; 2024 Hot Beans Web Development. All rights reserved.</p>
-        </div>
-    </footer>
+            <div class="copyright">
+                <p>&copy; 2024 Hot Beans Web Development. All rights reserved.</p>
+            </div>
+        </footer>
 
-    <!-- Modals -->
-    <div id="modal-web-dev" class="modal">
-        <div class="modal-content">
-            <span class="close" data-modal="modal-web-dev">&times;</span>
-            <h2>Web Developer</h2>
-            <br>
-            <h3>Details</h3>
-            <p>Create and maintain websites using coding languages and frameworks.</p>
-            <br>
-            <h3>Requirements</h3>
-            <ul>
-                <li>Proficiency in HTML, CSS, JavaScript</li>
-                <li>Experience with web frameworks</li>
-                <li>Strong problem-solving skills</li>
-            </ul>
-            <br>
-            <h3>Perks</h3>
-            <ul>
-                <li>Flexible working hours</li>
-                <li>Health insurance</li>
-                <li>Opportunities for growth</li>
-            </ul>
-        </div>
-    </div>
-
-    <div id="modal-full-stack" class="modal">
-        <div class="modal-content">
-            <span class="close" data-modal="modal-full-stack">&times;</span>
-            <h2>Full Stack Developer</h2>
-            <br>
-            <h3>Details</h3>
-            <p>Develop both front-end and back-end components of web applications.</p>
-            <br>
-            <h3>Requirements</h3>
-            <ul>
-                <li>Proficiency in front-end and back-end technologies</li>
-                <li>Experience with databases</li>
-                <li>Strong problem-solving skills</li>
-            </ul>
-            <br>
-            <h3>Perks</h3>
-            <ul>
-                <li>Flexible working hours</li>
-                <li>Health insurance</li>
-                <li>Opportunities for growth</li>
-            </ul>
-        </div>
-    </div>
-
-    <div id="modal-blockchain" class="modal">
-        <div class="modal-content">
-            <span class="close" data-modal="modal-blockchain">&times;</span>
-            <h2>Blockchain Developer</h2>
-            <br>
-            <h3>Details</h3>
-            <p>Build decentralized applications and implement blockchain technology.</p>
-            <br>
-            <h3>Requirements</h3>
-            <ul>
-                <li>Experience with blockchain platforms</li>
-                <li>Strong programming skills</li>
-                <li>Understanding of cryptographic principles</li>
-            </ul>
-            <br>
-            <h3>Perks</h3>
-            <ul>
-                <li>Flexible working hours</li>
-                <li>Health insurance</li>
-                <li>Opportunities for growth</li>
-            </ul>
-        </div>
-    </div>
-
-    <div id="modal-backend" class="modal">
-        <div class="modal-content">
-            <span class="close" data-modal="modal-backend">&times;</span>
-            <h2>Backend Developer</h2>
-            <br>
-            <h3>Details</h3>
-            <p>Focus on server-side development and database management.</p>
-            <br>
-            <h3>Requirements</h3>
-            <ul>
-                <li>Experience with server-side languages</li>
-                <li>Proficiency in database management</li>
-                <li>Strong problem-solving skills</li>
-            </ul>
-            <br>
-            <h3>Perks</h3>
-            <ul>
-                <li>Flexible working hours</li>
-                <li>Health insurance</li>
-                <li>Opportunities for growth</li>
-            </ul>
-        </div>
-    </div>
-
-    <div id="modal-frontend" class="modal">
-        <div class="modal-content">
-            <span class="close" data-modal="modal-frontend">&times;</span>
-            <h2>Frontend Developer</h2>
-            <br>
-            <h3>Details</h3>
-            <p>Design and implement user interfaces for websites and web applications.</p>
-            <br>
-            <h3>Requirements</h3>
-            <ul>
-                <li>Proficiency in HTML, CSS, JavaScript</li>
-                <li>Experience with front-end frameworks</li>
-                <li>Strong design skills</li>
-            </ul>
-            <br>
-            <h3>Perks</h3>
-            <ul>
-                <li>Flexible working hours</li>
-                <li>Health insurance</li>
-                <li>Opportunities for growth</li>
-            </ul>
-        </div>
-    </div>
-
-    <div id="modal-business-analyst" class="modal">
-        <div class="modal-content">
-            <span class="close" data-modal="modal-business-analyst">&times;</span>
-            <h2>Business Analyst</h2>
-            <br>
-            <h3>Details</h3>
-            <p>Analyze business processes and requirements to improve efficiency and productivity.</p>
-            <br>
-            <h3>Requirements</h3>
-            <ul>
-                <li>Experience in business analysis</li>
-                <li>Strong analytical skills</li>
-                <li>Excellent communication skills</li>
-            </ul>
-            <br>
-            <h3>Perks</h3>
-            <ul>
-                <li>Flexible working hours</li>
-                <li>Health insurance</li>
-                <li>Opportunities for growth</li>
-            </ul>
-        </div>
-    </div>
-
-    <div id="modal-director" class="modal">
-        <div class="modal-content">
-            <span class="close" data-modal="modal-director">&times;</span>
-            <h2>Director</h2>
-            <br>
-            <h3>Details</h3>
-            <p>Provide leadership and strategic direction for the company's operations and growth.</p>
-            <br>
-            <h3>Requirements</h3>
-            <ul>
-                <li>Experience in a leadership role</li>
-                <li>Strong strategic thinking</li>
-                <li>Excellent communication skills</li>
-            </ul>
-            <br>
-            <h3>Perks</h3>
-            <ul>
-                <li>Flexible working hours</li>
-                <li>Health insurance</li>
-                <li>Opportunities for growth</li>
-            </ul>
-        </div>
-    </div>
-
-    <div id="modal-finance-analyst" class="modal">
-        <div class="modal-content">
-            <span class="close" data-modal="modal-finance-analyst">&times;</span>
-            <h2>Finance Analyst</h2>
-            <h3>Details</h3>
-            <p>Analyze financial data to provide insights and recommendations for decision-making.</p>
-            <h3>Requirements</h3>
-            <ul>
-                <li>Experience in financial analysis</li>
-                <li>Strong analytical skills</li>
-                <li>Excellent communication skills</li>
-            </ul>
-            <h3>Perks</h3>
-            <ul>
-                <li>Flexible working hours</li>
-                <li>Health insurance</li>
-                <li>Opportunities for growth</li>
-            </ul>
-        </div>
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const jobContainers = document.querySelectorAll('.job');
-            const modals = document.querySelectorAll('.modal');
-            const closeButtons = document.querySelectorAll('.close');
-
-            jobContainers.forEach(job => {
-                job.addEventListener('click', () => {
-                    const modalId = job.getAttribute('data-modal');
-                    document.getElementById(modalId).style.display = 'block';
-                });
-            });
-
-            closeButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const modalId = button.getAttribute('data-modal');
-                    document.getElementById(modalId).style.display = 'none';
-                });
-            });
-
-            window.addEventListener('click', (event) => {
-                if (event.target.classList.contains('modal')) {
-                    event.target.style.display = 'none';
-                }
-            });
-        });
-    </script>
-
-    <script src="script.js"></script>
-
-</body>
+    </body>
 </html>
